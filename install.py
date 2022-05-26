@@ -1,5 +1,8 @@
 import subprocess
+import os
 import glob
+
+home = os.environ['HOME']
 
 def install_prog(pm):
     if pm == "apt":
@@ -7,8 +10,8 @@ def install_prog(pm):
         subprocess.run(["sudo", pm, "update"])
         subprocess.run(["sudo", pm, "upgrade"])
         subprocess.run(["sudo", pm, "install", packages])
-        subprocess.run(["mkdir", "-p", "~/.local/share/bin"])
-        subprocess.run(["wget", "https://github.com/neovim/neovim/releases/download/v0.7.0/nvim.appimage", "-O", "~/.local/share/bin/nvim"])
+        subprocess.run(["mkdir", "-p", f"{home}/.local/share/bin"])
+        subprocess.run(["wget", "https://github.com/neovim/neovim/releases/download/v0.7.0/nvim.appimage", "-O", f"{home}/.local/share/bin/nvim"])
     
     elif pm == "pacman":
         packages = "git build-essential htop tree tmux neovim wget curl"
@@ -16,21 +19,21 @@ def install_prog(pm):
 
 def install_config():
     # make config dir
-    subprocess.run(["mkdir -p ~/.config/"])
+    subprocess.run(["mkdir", "-p", f"{home}/.config/"])
 
     # copy stuff
     for x in glob.glob('./.config/*'):
-        subprocess.run(["cp", "-r", x, "~/.config"])
+        subprocess.run(["cp", "-r", x, f"{home}/.config"])
 
     #copy bashrc
-    subprocess.run(["cp", "./bashrc", "~/"])
+    subprocess.run(["cp", "./bashrc", f"{home}/"])
 
 print("What is your package manager: ")
 print("[1]  apt")
 print("[2]  pacman")
 pm = input()
 
-if pm == 1:
+if pm == "1":
     install_prog("apt")
 else:
     install_prog("pacman")
