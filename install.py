@@ -19,7 +19,7 @@ def install_prog(pm):
 
 def install_config():
     # make config dir
-    subprocess.run([f"mkdir -p {home}/.config/", shell=True])
+    subprocess.run(f"mkdir -p {home}/.config/", shell=True)
 
     # copy stuff
     for x in glob.glob('./.config/*'):
