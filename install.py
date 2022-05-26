@@ -6,7 +6,7 @@ home = os.environ['HOME']
 
 def install_prog(pm):
     if pm == "apt":
-        packages = "git build-essential htop tree tmux wget curl"
+        packages = "git build-essential htop tree tmux wget curl xsel"
         subprocess.run(f"sudo {pm} update", shell=True)
         subprocess.run(f"sudo {pm} upgrade", shell=True)
         subprocess.run(f"sudo {pm} install {packages}", shell=True)
@@ -14,7 +14,7 @@ def install_prog(pm):
         subprocess.run(f"wget https://github.com/neovim/neovim/releases/download/v0.7.0/nvim.appimage -O {home}/.local/bin/nvim", shell=True)
     
     elif pm == "pacman":
-        packages = "git build-essential htop tree tmux neovim wget curl"
+        packages = "git build-essential htop tree tmux neovim wget curl xsel"
         subprocess.run(f"sudo {pm} -Syu packages", shell=True)
 
 def install_config():
