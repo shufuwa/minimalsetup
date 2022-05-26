@@ -26,7 +26,7 @@ def install_config():
         subprocess.run(["cp", "-r", x, f"{home}/.config"])
 
     #copy bashrc
-    subprocess.run(["cp", "./bashrc", f"{home}/"])
+    subprocess.run(["cp", "./.bashrc", f"{home}/"])
 
 print("What is your package manager: ")
 print("[1]  apt")
