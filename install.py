@@ -10,8 +10,8 @@ def install_prog(pm):
         subprocess.run(["sudo", pm, "update"])
         subprocess.run(["sudo", pm, "upgrade"])
         subprocess.run(["sudo", pm, "install", packages])
-        subprocess.run(["mkdir", "-p", f"{home}/.local/share/bin"])
-        subprocess.run(["wget", "https://github.com/neovim/neovim/releases/download/v0.7.0/nvim.appimage", "-O", f"{home}/.local/share/bin/nvim"])
+        subprocess.run(["mkdir", "-p", f"{home}/.local/bin"])
+        subprocess.run(["wget", "https://github.com/neovim/neovim/releases/download/v0.7.0/nvim.appimage", "-O", f"{home}/.local/bin/nvim"])
     
     elif pm == "pacman":
         packages = "git build-essential htop tree tmux neovim wget curl"
