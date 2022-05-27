@@ -6,7 +6,7 @@ home = os.environ['HOME']
 
 def install_prog(pm):
     if pm == "apt":
-        packages = "git build-essential htop tree tmux wget curl xsel lxpolkit openbox plank xorg x11-xserver-utils"
+        packages = "git build-essential htop tree tmux wget curl xsel lxpolkit openbox plank xorg x11-xserver-utils spice-vdagent"
         subprocess.run(f"sudo {pm} update", shell=True)
         subprocess.run(f"sudo {pm} upgrade", shell=True)
         subprocess.run(f"sudo {pm} install {packages}", shell=True)
@@ -18,7 +18,7 @@ def install_prog(pm):
         subprocess.run(f"make PREFIX=/usr install", shell=True)
     
     elif pm == "pacman":
-        packages = "git build-essential htop tree tmux neovim wget curl xsel lxsession-gtk3 openbox plank xorg-xsetroot xf86-video-amdgpu mesa lib32-mesa xorg-xserver sx"
+        packages = "git build-essential htop tree tmux neovim wget curl xsel lxsession-gtk3 openbox plank xorg-xsetroot xf86-video-amdgpu mesa lib32-mesa xorg-xserver sx spice-vdagent"
         subprocess.run(f"sudo {pm} -Syu packages", shell=True)
 
 def install_config():
