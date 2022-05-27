@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# polkit
+lxpolkit &
+
+# utilities
+xsetroot -solid "#696969"
+XDG_SESSION_TYPE=x11 plank &
+xrdb ~/.Xresources

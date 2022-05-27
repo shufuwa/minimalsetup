@@ -1,0 +1,100 @@
+!{{{ Font settings
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+!}}}
+
+!{{{ Colors
+URxvt.background:   #151515
+URxvt.foreground:   #E8E3E3
+URxvt.cursorColor:  #e3e3e3
+!URxvt.cursorColor:           S_base1
+!URxvt.pointerColorBackground:S_base01
+!URxvt.pointerColorForeground:S_base1
+
+URxvt.color0:       #151515
+URxvt.color8:       #424242
+
+URxvt.color1:       #B66467
+URxvt.color9:       #B66467
+
+URxvt.color2:       #8C977D
+URxvt.color10:      #8C977D
+
+URxvt.color3:       #D9BC8C
+URxvt.color11:      #D9BC8C
+
+URxvt.color4:       #8DA3B9
+URxvt.color12:      #8DA3B9
+
+URxvt.color5:       #A988B0
+URxvt.color13:      #A988B0
+
+URxvt.color6:       #8AA6A2
+URxvt.color14:      #8AA6A2
+
+URxvt.color7:       #E8E3E3
+URxvt.color15:      #E8E3E3
+
+!}}}
+
+!{{{ URxvt
+URxvt.title: Console
+URxvt.iconFile: /usr/share/icons/consola.svg
+URxvt.scrollBar: false
+URxvt.depth: 32
+URxvt.geometry:  80x20
+URxvt.cursorBlink: true
+URxvt.letterSpace: 0
+!URxvt.lineSpace: -1
+URxvt.tabbed.tab-bg: # 000000
+URxvt.tabbed.tab-fg: # 699000
+URxvt.tabbed.tabbar-bg: # 000000
+URxvt.tabbed.tabbar-fg: # 4E9A06
+URxvt.internalBorder: 15
+
+!URxvt.font: xft:Tamzen:size=12
+!URxvt.boldFont: xft:Tamzen:size=12:antialias=true
+!URxvt.font: xft:comic-shanns2:size=8:antialias=false
+!URxvt.font: xft:Comic Shanns:size=10:antialias=true
+!Urxvt.font: -barbaross-creeper-medium-r-normal--13-101-100-100-c-70-iso8859-1:antialias=false
+!URxvt.boldFont: -barbaross-creeper-bold-r-normal--13-101-100-100-c-70-iso8859-1:antialias=false
+!URxvt.font: creeper:style=Regular
+!URxvt.boldFont: creeper:style=Bold
+URxvt.font: xft:Tamzen:pixelsize=14:antialias=true
+URxvt.boldFont:
+!URxvt.boldFont: xft:Tamzen:style=Bold:pixelsize=16:antialias=true  
+!URxvt.font: xft:FiraCode Nerd Font:style=Regular:pixelsize=12
+!URxvt.boldFont: xft:FiraCode Nerd Font:style=Bold:pixelsize=12
+!URxvt.font: xft:Cozette:size=8
+!URxvt.boldFont: xft:Cozette:size=8
+
+!! Common Keybinds for Navigations
+!URxvt.keysym.Shift-Up: command:\033]720;1\007
+!URxvt.keysym.Shift-Down: command:\033]721;1\007
+!URxvt.keysym.Control-Up: \033[1;5A
+!URxvt.keysym.Control-Down: \033[1;5B
+!URxvt.keysym.Control-Right: \033[1;5C
+!URxvt.keysym.Control-Left: \033[1;5D
+
+!! Copy Paste & Other Extensions
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select,resize-font
+URxvt.copyCommand: xclip -i -selection clipboard
+URxvt.pasteCommand: xclip -o -selection clipboard
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.urlLauncher: firefox
+URxvt.underlineURLs: true
+URxvt.urlButton: 1
+!}}}
+
+Sxiv.background: #20242D
+Sxiv.foreground: #D2D3D4
+
