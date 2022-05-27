@@ -13,8 +13,8 @@ def install_prog(pm):
         subprocess.run(f"mkdir -p {home}/.local/bin", shell=True)
         subprocess.run(f"wget https://github.com/neovim/neovim/releases/download/v0.7.0/nvim.appimage -O {home}/.local/bin/nvim", shell=True)
         subprocess.run(f"git clone https://github.com/Earnestly/sx.git", shell=True)
-        subprocess.run(f"cd ./sx/", shell=True)
-        subprocess.run(f"make PREFIX=/usr install", shell=True)
+        os.chdir('./sx')
+        subprocess.run(f"sudo make PREFIX=/usr install", shell=True)
     
     elif pm == "pacman":
         packages = "git build-essential htop tree tmux neovim wget curl xsel lxsession-gtk3 openbox plank xorg-xsetroot xf86-video-amdgpu mesa lib32-mesa xorg-xserver sx spice-vdagent"
