@@ -15,6 +15,7 @@ def install_prog(pm):
         subprocess.run(f"git clone https://github.com/Earnestly/sx.git", shell=True)
         os.chdir('./sx')
         subprocess.run(f"sudo make PREFIX=/usr install", shell=True)
+        os.chdir('../')
     
     elif pm == "pacman":
         packages = "git build-essential htop tree tmux neovim wget curl xsel lxsession-gtk3 openbox plank xorg-xsetroot xf86-video-amdgpu mesa lib32-mesa xorg-xserver sx spice-vdagent"
