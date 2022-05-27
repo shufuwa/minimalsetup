@@ -3,7 +3,11 @@
 # polkit
 lxpolkit &
 
+# bins
+picom &
+
 # utilities
 xsetroot -solid "#696969"
 XDG_SESSION_TYPE=x11 plank &
+spice-vdagent &
 xrdb ~/.Xresources

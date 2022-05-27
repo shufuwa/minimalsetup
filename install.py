@@ -6,7 +6,7 @@ home = os.environ['HOME']
 
 def install_prog(pm):
     if pm == "apt":
-        packages = "git build-essential htop tree tmux wget curl xsel lxpolkit openbox plank xorg x11-xserver-utils spice-vdagent"
+        packages = "git build-essential htop tree tmux wget curl xsel lxpolkit openbox plank xorg x11-xserver-utils spice-vdagent picom"
         subprocess.run(f"sudo {pm} update", shell=True)
         subprocess.run(f"sudo {pm} upgrade", shell=True)
         subprocess.run(f"sudo {pm} install {packages}", shell=True)
@@ -18,7 +18,7 @@ def install_prog(pm):
         os.chdir('../')
     
     elif pm == "pacman":
-        packages = "git htop tree tmux neovim wget curl xsel lxsession-gtk3 openbox plank xorg-xsetroot xf86-video-amdgpu mesa xorg-server sx spice-vdagent"
+        packages = "git htop tree tmux neovim wget curl xsel lxsession-gtk3 openbox plank xorg-xsetroot xf86-video-amdgpu mesa xorg-server sx spice-vdagent picom"
         subprocess.run(f"sudo {pm} -Syu {packages}", shell=True)
 
 def install_config():
@@ -35,6 +35,7 @@ def install_config():
     subprocess.run(f"cp -a ./.local/share/themes/* {home}/.local/share/themes/", shell=True)
     subprocess.run(f"cp -a ./.local/share/plank/themes/* {home}/.local/share/plank/themes/", shell=True)
     subprocess.run(f"cp -a ./.local/share/fonts/* {home}/.local/share/fonts/", shell=True)
+    subprocess.run(f"cp -a ./.urxvt {home}/", shell=True)
 
     #copy bashrc
     subprocess.run(f"cp ./.bashrc {home}/", shell=True)
