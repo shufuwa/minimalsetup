@@ -24,6 +24,7 @@ def install_prog(pm):
 def install_config():
     # make config dir
     subprocess.run(f"mkdir -p {home}/.config/", shell=True)
+    subprocess.run(f"mkdir -p {home}/.local/share/fonts/", shell=True)
     subprocess.run(f"mkdir -p {home}/.local/share/themes", shell=True)
     subprocess.run(f"mkdir -p {home}/.local/share/plank/themes", shell=True)
 
@@ -33,6 +34,7 @@ def install_config():
 
     subprocess.run(f"cp -a ./.local/share/themes/* {home}/.local/share/themes/", shell=True)
     subprocess.run(f"cp -a ./.local/share/plank/themes/* {home}/.local/share/plank/themes/", shell=True)
+    subprocess.run(f"cp -a ./.local/share/fonts/* {home}/.local/share/fonts/", shell=True)
 
     #copy bashrc
     subprocess.run(f"cp ./.bashrc {home}/", shell=True)
