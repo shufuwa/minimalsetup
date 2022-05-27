@@ -12,9 +12,8 @@ def install_prog(pm):
         subprocess.run(f"sudo {pm} install {packages}", shell=True)
         subprocess.run(f"mkdir -p {home}/.local/bin", shell=True)
         subprocess.run(f"wget https://github.com/neovim/neovim/releases/download/v0.7.0/nvim.appimage -O {home}/.local/bin/nvim", shell=True)
-        subprocess.run(f"cd /tmp", shell=True)
         subprocess.run(f"git clone https://github.com/Earnestly/sx.git", shell=True)
-        subprocess.run(f"cd /tmp/sx/", shell=True)
+        subprocess.run(f"cd ./sx/", shell=True)
         subprocess.run(f"make PREFIX=/usr install", shell=True)
     
     elif pm == "pacman":
