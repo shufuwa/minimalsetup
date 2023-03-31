@@ -48,7 +48,7 @@ print("[1]  apt")
 print("[2]  pacman")
 pm = input()
 
-if pm == "1":
+if pm in ["1", "apt", "APT", "Apt", "[1]  apt"]:
     install_prog("apt")
 else:
     install_prog("pacman")
