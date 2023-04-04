@@ -18,7 +18,7 @@ def install_prog(pm):
         os.chdir('../')
     
     elif pm == "pacman":
-        packages = "git htop tree tmux neovim wget curl xsel lxsession-gtk3 openbox plank xorg-xsetroot xf86-video-amdgpu mesa xorg-server sx spice-vdagent picom"
+        packages = "git htop tree tmux neovim wget curl xsel lxsession-gtk3 openbox obconf menumaker plank xorg-xsetroot xf86-video-amdgpu mesa xorg-server sx spice-vdagent picom ttf-dejavu ttf-liberation"
         subprocess.run(f"sudo {pm} -Syu {packages}", shell=True)
 
 def install_config():
